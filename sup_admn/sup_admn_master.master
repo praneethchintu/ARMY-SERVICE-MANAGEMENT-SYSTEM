@@ -1,0 +1,389 @@
+﻿  <%@ Master Language="C#" AutoEventWireup="true" CodeFile="sup_admn_master.master.cs" Inherits="sup_admn_sup_admn_master" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"  runat="server">
+    <title></title> 
+   <asp:ContentPlaceHolder id="head" runat="server">
+     </asp:ContentPlaceHolder>
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+     
+        
+        <script src="../js/vendor/jquery-1.9.1.min.js"></script>
+        <script>            window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script  src="../js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
+        <script src="../js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
+        <script src="../js/vendor/jquery.flot.min.js"></script>                    <!-- charts plugin -->
+        <script src="../js/vendor/jquery.flot.resize.min.js"></script>             <!-- charts plugin / resizing extension -->
+        <script src="../js/vendor/jquery.flot.pie.min.js"></script>                <!-- charts plugin / pie chart extension -->
+        <script src="../js/vendor/wysihtml5-0.3.0_rc2.min.js"></script>            <!-- wysiwyg plugin -->
+        <script src="../js/vendor/bootstrap-wysihtml5-0.0.2.min.js"></script>      <!-- wysiwyg plugin / bootstrap extension -->
+        <script src="../js/vendor/bootstrap-tags.js"></script>                     <!-- multivalue input tags -->
+        <script src="../js/vendor/jquery.tablesorter.min.js"></script>             <!-- tablesorter plugin -->
+        <script src="../js/vendor/jquery.tablesorter.widgets.min.js"></script>     <!-- tablesorter plugin / widgets extension -->
+        <script src="../js/vendor/jquery.tablesorter.pager.min.js"></script>       <!-- tablesorter plugin / pager extension -->
+        <script src="../js/vendor/raphael.2.1.0.min.js"></script>                  <!-- vector graphic plugin / for justgage.js -->
+        <script src="../js/vendor/justgage.js"></script>                           <!-- justgage plugin -->
+        <script src="../js/vendor/bootstrap-multiselect.js"></script>              <!-- multiselect plugin -->
+        <script src="../js/vendor/bootstrap-datepicker.js"></script>               <!-- datepicker plugin -->
+        <script src="../js/vendor/bootstrap-colorpicker.js"></script>              <!-- colorpicker plugin -->
+        <script src="../js/vendor/parsley.min.js"></script>                        <!-- parsley validator plugin -->
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/vendor/bootstrap-editable.min.js"></script>             <!-- editable fields plugin -->
+        <script src="../js/thekamarel.min.js"></script>                            <!-- main project js file -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+       
+      
+
+        <link rel="stylesheet" href="../css/styles.css">
+       <%-- <link rel="stylesheet" href="../css/thekamarel.css">--%>
+    
+       <script language="javascript" type="text/javascript">
+           function fireServerButtonEvent() {
+               document.getElementById("AnchorDirectory").click();
+           }
+
+
+                   </script>
+                   <style type="text/css">
+                    div.profileInfo p
+  {
+      height:20px;
+      
+      }
+                   </style>
+    
+</head>
+<body>
+
+<link type="text/css" rel="Stylesheet" href="../css/thekamarel.css" />
+    <link type="text/css" rel="Stylesheet" href="../css/styles.css" />
+     
+    <form id="form1" runat="server">
+    
+    <div>
+    <asp:ToolkitScriptManager ID="tsc1" runat="server"></asp:ToolkitScriptManager>
+     <!-- ==================== TOP MENU ==================== -->
+     
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="#"><strong class="brandBold">HELP DESK MANAGEMENT</strong></a>
+                    <div class="nav pull-right">
+                        <div class="navbar-form">
+                            <div class="input-append">
+                             
+                                   
+                                    
+                                <div class="collapsibleContent">
+                                   <%-- <a id="AnchorDirectory" runat="server" href="#tasksContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="tasks"><i class="icon-tasks"></i><span class="notifyCircle cyan">3</span></span></a>
+                                    <a id="Anchor2" runat="server" onserverclick="ButtonClick" type="text/asp" href="#notificationsContent"  class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="notifications"><i class="icon-bell-alt"></i><span class="notifyCircle orange">9</span></span></a>
+                                    <a id="Anchor3" runat="server" onserverclick="ButtonClick" href="#messagesContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="messages"><i class="icon-comments-alt"></i><span class="notifyCircle red">12</span></span></a>
+                                    <a id="Anchor4" runat="server" onserverclick="ButtonClick" href="#settingsContent" class="sidebar"><span class="add-on add-on-middle add-on-mini add-on-dark" id="settings"><i class="icon-cog"></i></span></a>--%>
+                                    <a href="#profileContent" class="sidebar"><span class="add-on add-on-mini add-on-dark" id="profile"><i class="icon-user"></i><span class="username"><asp:Label ID="lblUserName" runat="server" Font-Bold="true" ForeColor="White"></asp:Label></span></span></a>
+                                </div>
+                                <a href="#collapsedSidebarContent" class="collapseHolder sidebar"><span class="add-on add-on-mini add-on-dark"><i class="icon-sort-down"></i></span></a>
+                                             
+                            
+                            </div>
+                        </div>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- ==================== END OF TOP MENU ==================== -->
+       <asp:UpdatePanel ID="up1" runat="server">
+                                    <ContentTemplate>
+        <div class="hiddenContent" id="sliderdivfix" runat="server" style="height:605px">
+            
+            <!-- ==================== SIDEBAR TASKS ==================== -->
+            <div id="tasksContent" runat="server">
+                <div class="sidebarDivider">
+                </div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left">
+                    </i>
+                        <h1>
+                            Tasks</h1>
+                    </a>
+                    <h1>
+                        <button id="b1" class="icon-book btn" style="width: 30px">
+                        </button>
+                        Directory</h1>
+                    <asp:DropDownList ID="ddlCat" runat="server" AutoPostBack="true" OnSelectedIndexChanged="changed"
+                        Width="80%">
+                    </asp:DropDownList>
+                   
+                    <asp:Label ID="lblResult" runat="server"></asp:Label>
+                    <ul class="tasksList">
+                        <div class="notificationsList">
+                            <asp:GridView ID="gv_directory" runat="server" Width="100%" AutoGenerateColumns="false"
+                                ShowHeader="false">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <li class="new">
+                                                <asp:Label ID="lblName" runat="server" Text='<%#Eval("name") %>' ToolTip='<%#Eval("alt") %>'></asp:Label>
+                                                <div class="notificationDate">
+                                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("mobile") %>' ToolTip='<%#Eval("alt") %>'></asp:Label>
+                                                </div>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                </div>
+            </div>
+            <!-- ==================== SIDEBAR MESSAGES ==================== -->
+            <div id="messagesContent" runat="server">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <div class="floatingBox">
+                        <div class="container-fluid">
+                            <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left">
+                            </i>
+                                <h1>
+                                    Incidents</h1>
+                            </a>
+                            <h1>
+                                Messages</h1>
+                            <%--<asp:Accordion runat="server" ID="Accordion1" SelectedIndex="0" HeaderCssClass="containerHeadline"
+                                HeaderSelectedCssClass="containerHeadline" Width="95%" RequireOpenedPane="true"
+                                FadeTransitions="true" FramesPerSecond="6000" TransitionDuration="10">
+                                <Panes>
+                                    <asp:AccordionPane ID="acc1" runat="server">
+                                        <Header>
+                                            <asp:Label ID="lblNewCount" runat="server" Style="margin-left: 10px; float: left"></asp:Label>
+                                        </Header>
+                                        <Content>
+                                            <div class="sidebarContent">
+                                                <ul class="messagesList">
+                                                    <asp:GridView ID="gv_new_list" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                        Width="100%" BorderWidth="0px">
+                                                        <Columns>
+                                                            <asp:TemplateField>
+                                                                <ItemTemplate>
+                                                                    <li class="unreaded">
+                                                                        <h3>
+                                                                            <asp:Label ID="lblRoom" runat="server" Text='<%#Eval("room") %>'></asp:Label></h3>
+                                                                        <span class="messageDate">
+                                                                            <asp:Label ID="lblDate" runat="server" Text='<%#Eval("inc_date") %>'></asp:Label>
+                                                                            <span class="pull-right messageStatus">
+                                                                                <asp:Label ID="lblStatus" runat="server" Text="New"></asp:Label></span>
+                                                                        </span></li>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </ul>
+                                            </div>
+                                        </Content>
+                                    </asp:AccordionPane>
+                                    <asp:AccordionPane ID="acc2" runat="server">
+                                        <Header>
+                                            <asp:Label ID="lblProgressCount" runat="server" Style="margin-left: 10px; float: left"></asp:Label>
+                                        </Header>
+                                        <Content>
+                                            <div class="sidebarContent">
+                                                <ul class="messagesList">
+                                                    <asp:GridView ID="gv_In_progress" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                        Width="100%" BorderWidth="0px">
+                                                        <Columns>
+                                                            <asp:TemplateField>
+                                                                <ItemTemplate>
+                                                                    <li class="unreaded">
+                                                                        <h3>
+                                                                            <asp:Label ID="lblRoom" runat="server" Text='<%#Eval("room") %>'></asp:Label></h3>
+                                                                        <span class="messageDate">
+                                                                            <asp:Label ID="lblDate" runat="server" Text='<%#Eval("inc_date") %>'></asp:Label>
+                                                                            <span class="pull-right messageStatus">
+                                                                                <asp:Label ID="lblStatus" runat="server" Text="In Progress"></asp:Label></span>
+                                                                        </span></li>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </ul>
+                                            </div>
+                                        </Content>
+                                    </asp:AccordionPane>
+                                    <asp:AccordionPane ID="AccordionPane1" runat="server">
+                                        <Header>
+                                            <asp:Label ID="lblCompltedCount" runat="server" Style="margin-left: 10px; float: left"></asp:Label>
+                                        </Header>
+                                        <Content>
+                                            <div class="sidebarContent">
+                                                <ul class="messagesList">
+                                                    <asp:GridView ID="gv_completed_list" runat="server" AutoGenerateColumns="false" ShowHeader="false"
+                                                        Width="100%" BorderWidth="0px">
+                                                        <Columns>
+                                                            <asp:TemplateField>
+                                                                <ItemTemplate>
+                                                                    <li class="unreaded">
+                                                                        <h3>
+                                                                            <asp:Label ID="lblRoom" runat="server" Text='<%#Eval("room") %>'></asp:Label></h3>
+                                                                        <span class="messageDate">
+                                                                            <asp:Label ID="lblDate" runat="server" Text='<%#Eval("inc_date") %>'></asp:Label>
+                                                                            <span class="pull-right messageStatus">
+                                                                                <asp:Label ID="lblStatus" runat="server" Text="Completed"></asp:Label></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </ul>
+                                            </div>
+                                        </Content>
+                                    </asp:AccordionPane>
+                                </Panes>
+                            </asp:Accordion>--%>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <!-- ==================== END OF SIDEBAR MESSAGES ==================== -->
+
+            <!-- ==================== SIDEBAR SETTINGS ==================== -->
+            <div id="settingsContent" runat="server">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> Settings</h1></a>
+                    <h1>Settings</h1>
+                    <ul class="settingsList">
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> Slider</h3>
+                                <div class="sl1"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingSlider">
+                                <i class="icon-leaf"></i><h3> RangeSlider</h3>
+                                <div class="sl2"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="settingToggler">
+                                <i class="icon-leaf"></i><h3> Toggler</h3>
+                                <label class="checkbox toggle well" onclick="">
+                                    <input id="toggler" type="checkbox"  />
+                                    <span class="slider-selection"></span>
+                                    <span class="toggleStatus">
+                                        <span><i class="icon-ok toggleOn"></i></span>
+                                        <span><i class="icon-remove toggleOff"></i></span>
+                                    </span>
+                                    <a class="btn btn-primary slide-button"></a>
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="fontSize">
+                            <h2>Font Size</h2>
+                            <div class="fontSizeBlock fontSizeSmall active"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeMedium"><span>A</span></div>
+                            <div class="fontSizeBlock fontSizeBig"><span>A</span></div>
+                        </li>
+
+                        <li class="fontStyle">
+                            <h2>Font Style</h2>
+                            <div class="fontStyleBlock fontStyleSansSerif active"><span>Aa</span></div>
+                            <div class="fontStyleBlock fontStyleSerif"><span>Aa</span></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR SETTINGS ==================== -->
+
+            <!-- ==================== SIDEBAR PROFILE ==================== -->
+            <div id="profileContent">
+                <div class="sidebarDivider"></div>
+                <div class="sidebarContent">
+                    <a href="#collapsedSidebarContent" class="showCollapsedSidebarMenu"><i class="icon-chevron-sign-left"></i><h1> My account</h1></a>
+                    <h1>My account</h1>
+                    <div class="profileBlock" style="min-height:190px !important">
+                        <div class="profilePhoto"  style="height:0px !important">
+                            <div class="usernameHolder"></div>
+                        </div>
+                        <div class="profileInfo">
+                            <p><i class="icon-map-marker"></i><asp:Label ID="lblDesignation" runat="server"></asp:Label> </p>
+                            <p><i class="icon-envelope-alt"></i><asp:Label ID="lblEmpId" runat="server"></asp:Label> </p>
+                            <p><i class="icon-globe"></i><asp:Label ID="lblDepartment" runat="server"></asp:Label> </p>
+                            
+                        </div>
+                        <footer>
+                           <a href="../profile/personal_profile.aspx"> <div class="profileSettingBlock editProfile"><i class="icon-user"></i>profile</div></a>
+                          <a href="../profile/change_pass.aspx">  <div class="profileSettingBlock changePassword"><i class="icon-lock"></i>change password</div></a>
+                           <a id="a1" runat="server" onserverclick="btnSignOut_Click"><div class="profileSettingBlock logout">
+                                <i class="icon-off"></i>logout</div></a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- ==================== END OF SIDEBAR PROFILE ==================== -->
+
+        </div>
+
+        </ContentTemplate>
+                                    </asp:UpdatePanel>        
+        <div class="mainmenu">
+            <div class="container-fluid">
+                <ul class="nav">
+                    <li class="collapseMenu">0</li>
+                    <li class="divider-vertical firstDivider">&nbsp;&nbsp; </li>
+                    <li class="left-side" id="dashboard"><a href="../sup_admn/default.aspx"><i class="icon-dashboard"></i> DASHBOARD</a></li>
+                    <li class="divider-vertical"></li>
+                     <%-- <li class="left-side" id="Li2"><a href="../sup_admn/emp_reg.aspx"><i class="icon-dashboard"></i> REGISTRATION</a></li>--%>
+                      <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="A3"><i class="icon-list"></i> REGISTRATION<span class="label label-pressed">2</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="../sup_admn/emp_reg.aspx">EMPLOYEE REG</a></li>
+                            <li><a tabindex="-1" href="../sup_admn/army_emp_reg.aspx">ARMY EMPLOYEE REG</a></li>                            
+                        </ul>
+                    </li>
+               <li class="divider-vertical"></li>
+                   <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="formElements"><i class="icon-list"></i> MASTERS<span class="label label-pressed">4</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="../masters/product_masters.aspx">PRODUCT</a></li>
+                            <li><a tabindex="-1" href="../masters/room_mngnt.aspx">ROOM</a></li>
+                            <li><a tabindex="-1" href="../masters/Service_exe_master.aspx">TECHNICIAN </a></li>
+                            <li><a tabindex="-1" href="../sup_admn/Requests.aspx">SMS&PREFIX MASTER</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="A2"><i class="icon-list"></i> REPORTS<span class="label label-pressed">3</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="../sup_admn/total_requests_count_report.aspx">INCIDENTS TOTAL</a></li>
+                            <li><a tabindex="-1" href="../sup_admn/incident_status_time_delay_Report.aspx">INCIDENT STATUS</a></li>
+                            <li><a tabindex="-1" href="../sup_admn/Employee_report_status.aspx">EMPLOYEE STATUS</a></li>
+                        </ul>
+                    </li>
+                    
+
+                </ul>                
+           </div>
+        </div>
+        <!-- ==================== END OF MAIN MENU ==================== -->
+
+        <!-- ==================== DROPDOWN MENU FOR MOREOPTIONS ICON (hidden state) ==================== -->
+        
+        <!-- ==================== END OF DROPDOWN MENU ==================== -->        
+    </div>
+    <div id="content">
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    </form>
+    
+</body>
+</html>

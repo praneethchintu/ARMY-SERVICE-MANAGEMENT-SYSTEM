@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Helper" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'Helper' because it creates members of the following IDisposable types: 'SqlConnection', 'SqlCommand', 'SqlDataAdapter', 'DataSet'. If 'Helper' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindGrid(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="Helper.cs" Line="95">'Helper.BindGrid(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="Helper.cs" Line="90">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'Helper.BindGrid(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#delete(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="Helper.cs" Line="127">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'Helper.delete(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FillDropDownTwo(System.String,System.Web.UI.WebControls.DropDownList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="Helper.cs" Line="53">'Helper.FillDropDownTwo(string, DropDownList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="Helper.cs" Line="31">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'Helper.FillDropDownTwo(string, DropDownList)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="helper_class" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'helper_class' because it creates members of the following IDisposable types: 'SqlConnection', 'DataTable', 'SqlDataAdapter', 'DataSet', 'SqlCommand'. If 'helper_class' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#bulkCopy(System.Data.DataTable,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="helper_class.cs" Line="272">The query string passed to 'SqlCommand.CommandText.set(string)' in 'helper_class.bulkCopy(DataTable, string, string)' could contain the following variables 'query'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MyClass" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'MyClass' because it creates members of the following IDisposable types: 'SqlCommand', 'SqlConnection'. If 'MyClass' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#delete(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="336">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.delete(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fillchbx(System.String,System.Web.UI.WebControls.CheckBoxList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="242">'MyClass.fillchbx(string, CheckBoxList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="223">The query string passed to 'SqlCommand.CommandText.set(string)' in 'MyClass.fillchbx(string, CheckBoxList)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fillchbxcmd(System.Data.SqlClient.SqlCommand,System.Web.UI.WebControls.CheckBoxList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="286">'MyClass.fillchbxcmd(SqlCommand, CheckBoxList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FillDropDown(System.String,System.Web.UI.WebControls.DropDownList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="135">'MyClass.FillDropDown(string, DropDownList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="110">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.FillDropDown(string, DropDownList)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FillDropDownTwo(System.String,System.Web.UI.WebControls.DropDownList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="174">'MyClass.FillDropDownTwo(string, DropDownList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="149">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.FillDropDownTwo(string, DropDownList)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FillDropDownTwocmd(System.Data.SqlClient.SqlCommand,System.Web.UI.WebControls.DropDownList)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="209">'MyClass.FillDropDownTwocmd(SqlCommand, DropDownList)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GrdBind(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="446">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.GrdBind(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#insert(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="393">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.insert(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Scalar(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\App_Code" File="MyClass.cs" Line="526">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MyClass.Scalar(string)' could contain the following variables 'str'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SMS" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'SMS' because it creates members of the following IDisposable types: 'SerialPort'. If 'SMS' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_5pfp3mqp.dll">
+   <Modules>
+    <Module Name="app_web_5pfp3mqp.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="masters_room_mngnt" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btnFlatNoSave_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="328">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.btnFlatNoSave_Click(object, EventArgs)' could contain the following variables 'li.Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ddl_Flat_Aminity_Block_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="432">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.ddl_Flat_Aminity_Block_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.ddl_Flat_Aminity_Block.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ddlBlockName_F_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="1176">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.ddlBlockName_F_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.ddlBlockName_F.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#get_flatType_AmenityType_details()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="730">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.get_flatType_AmenityType_details()' could contain the following variables 'this.ddl_flat_types.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#imgbtnFlatEdit_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="1268">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.imgbtnFlatEdit_Click(object, EventArgs)' could contain the following variables 'this.ddlBlockName_F.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#imgbtnFlatNoEdit_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="575">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.imgbtnFlatNoEdit_Click(object, EventArgs)' could contain the following variables 'this.lblFlat_id.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#imgbtnFlatNoview_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="600">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.imgbtnFlatNoview_Click(object, EventArgs)' could contain the following variables 'this.lblFlat_id.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_chkblist_withflat_list()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\masters" File="room_mngnt.aspx.cs" Line="148">The query string passed to 'SqlCommand.CommandText.set(string)' in 'masters_room_mngnt.load_chkblist_withflat_list()' could contain the following variables 'this.lblFlat_id.Text', 'this.lblFlat_id.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_dlqratkg.dll">
+   <Modules>
+    <Module Name="app_web_dlqratkg.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="incident_creation_incident" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#load_blocks()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\technician" File="incidents_of_technis.aspx.cs" Line="401">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_blocks()' could contain the following variables 'this.ddl_Pocket.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_flats()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\technician" File="incidents_of_technis.aspx.cs" Line="415">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_flats()' could contain the following variables 'this.ddl_Floor.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_floors()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\technician" File="incidents_of_technis.aspx.cs" Line="408">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_floors()' could contain the following variables 'this.ddl_Block.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Timer1_Tick(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\technician" File="incidents_of_technis.aspx.cs" Line="254">The query string passed to 'SQLiteCommand.SQLiteCommand(string)' in 'incident_creation_incident.Timer1_Tick(object, EventArgs)' could contain the following variables 'dt.Rows[0]["id"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_muq0j51g.dll">
+   <Modules>
+    <Module Name="app_web_muq0j51g.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="sup_admn_service_management" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btnexeupdate_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="service_management.aspx.cs" Line="1519">The query string passed to 'SqlCommand.SqlCommand(string)' in 'sup_admn_service_management.btnexeupdate_Click(object, EventArgs)' could contain the following variables 'this.hid.Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#btnserviceupdate_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="service_management.aspx.cs" Line="1207">The query string passed to 'SqlCommand.SqlCommand(string)' in 'sup_admn_service_management.btnserviceupdate_Click(object, EventArgs)' could contain the following variables 'this.hid.Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Category_load()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="service_management.aspx.cs" Line="425">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_service_management.Category_load()' could contain the following variables 'this.ddlServices.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#get_menu_list()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="service_management.aspx.cs" Line="642">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_service_management.get_menu_list()' could contain the following variables 'this.ddlCategoryList.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_nn3al1mq.dll">
+   <Modules>
+    <Module Name="app_web_nn3al1mq.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="incident_creation_incident" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#load_blocks()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\incident_creation" File="incident.aspx.cs" Line="588">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_blocks()' could contain the following variables 'this.ddl_Pocket.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_flats()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\incident_creation" File="incident.aspx.cs" Line="602">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_flats()' could contain the following variables 'this.ddl_Floor.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_floors()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\incident_creation" File="incident.aspx.cs" Line="595">The query string passed to 'SqlCommand.SqlCommand(string)' in 'incident_creation_incident.load_floors()' could contain the following variables 'this.ddl_Block.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Timer1_Tick(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\incident_creation" File="incident.aspx.cs" Line="438">The query string passed to 'SQLiteCommand.SQLiteCommand(string)' in 'incident_creation_incident.Timer1_Tick(object, EventArgs)' could contain the following variables 'dt.Rows[0]["id"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_nzsv2dwg.dll">
+   <Modules>
+    <Module Name="app_web_nzsv2dwg.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="incident_creation_incident" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#load_ddl_employs()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\tickets_for_amenities" File="tickets_for_amenities.aspx.cs" Line="189">The query string passed to 'SqlCommand.CommandText.set(string)' in 'incident_creation_incident.load_ddl_employs()' could contain the following variables 'this.ddlissuecode.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Timer1_Tick(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\tickets_for_amenities" File="tickets_for_amenities.aspx.cs" Line="276">The query string passed to 'SQLiteCommand.SQLiteCommand(string)' in 'incident_creation_incident.Timer1_Tick(object, EventArgs)' could contain the following variables 'dt.Rows[0]["id"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_ok3edjie.dll">
+   <Modules>
+    <Module Name="app_web_ok3edjie.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="sup_admn_emp_reg" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#imgbtn_Army_EditDetails_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="356">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.imgbtn_Army_EditDetails_Click(object, EventArgs)' could contain the following variables 'this.grid_army_employees.DataKeys[gr.RowIndex].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#imgbtnviewDetails_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="188">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.imgbtnviewDetails_Click(object, EventArgs)' could contain the following variables 'this.grid_army_employees.DataKeys[gr.RowIndex].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_blocks()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="269">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.load_blocks()' could contain the following variables 'this.ddlDesiName.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_flats()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="290">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.load_flats()' could contain the following variables 'this.ddlDesiName.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_floors()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="280">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.load_floors()' could contain the following variables 'this.ddlDesiName.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#load_pockets()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="army_emp_reg.aspx.cs" Line="257">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_emp_reg.load_pockets()' could contain the following variables 'this.ddlDesiName.SelectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\raju\AppData\Local\Temp\tmpE299.tmp.cadir\bin\App_Web_zwjj2hhu.dll">
+   <Modules>
+    <Module Name="app_web_zwjj2hhu.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="sup_admn_Employee_report_status" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#txtSearch_TextChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-11-13 21:25:33Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="e:\Army service management\army\army\sup_admn" File="Employee_report_status.aspx.cs" Line="59">The query string passed to 'SqlCommand.CommandText.set(string)' in 'sup_admn_Employee_report_status.txtSearch_TextChanged(object, EventArgs)' could contain the following variables 'this.txtSearch.Text', 'this.txtSearch.Text', 'this.txtSearch.Text', 'this.txtSearch.Text', 'this.txtSearch.Text', 'this.txtSearch.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Types that own disposable fields should be disposable</Name>
+   <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+   <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>
